@@ -5,7 +5,7 @@
 
 Herramienta CLI ligera para diagnóstico y comunicación por puerto serial, orientada a equipos de campo como GNSS, dispositivos embebidos y equipos de topografía.
 
-## ![Descargar](https://github.com/schweineorgel/serial-com/releases/download/v0.1.0/serial-com.exe)
+## [Descargar](https://github.com/schweineorgel/serial-com/releases/download/v0.1.0/serial-com.exe)
 
 ## Características
 
