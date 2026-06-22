@@ -56,3 +56,7 @@ serial-com --port COM11 --baud 115200 --echo --log test.txt
 | `--crlf`    | Usa CRLF en lugar de LF                    |
 | `--log`     | Guarda la sesión en archivo                |
 | `--version` | Muestra versión del programa               |
+
+### Capturas
+Captura de pantalla de programa siendo utilizando mediante Powershell en una Trimble TSC7. 
+![TSC7](assets/tsc7.jpg)
