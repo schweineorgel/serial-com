@@ -1,5 +1,8 @@
 name: Build serial-com (Windows)
 
+permissions:
+  contents: write
+
 on:
   push:
     tags:
@@ -28,14 +31,10 @@ jobs:
         run: |
           pyinstaller --onefile --clean --name serial-com serial_com.py
 
-      - name: Verify build output
-        run: |
-          dir dist
-
-      - name: Upload artifact (debug)
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: serial-com-exe
+          name: serial-com
           path: dist/**
 
       - name: Create GitHub Release and upload EXE
