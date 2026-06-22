@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.14"
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -26,11 +26,21 @@ jobs:
 
       - name: Build executable
         run: |
-          pyinstaller --onefile --name serial-com serial_com.py
+          pyinstaller --onefile --clean --name serial-com serial_com.py
 
-      - name: Create Release
+      - name: Verify build output
+        run: |
+          dir dist
+
+      - name: Upload artifact (debug)
+        uses: actions/upload-artifact@v4
+        with:
+          name: serial-com-exe
+          path: dist/**
+
+      - name: Create GitHub Release and upload EXE
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/serial-com.exe
+          files: dist/**
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
